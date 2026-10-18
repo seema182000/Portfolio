@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Seema | Product Manager Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of Mohammad Seema, an aspiring Product Manager with expertise in product discovery, user research, AI tools, and funnel analysis.">
+    <meta name="keywords" content="Product Manager, Product Management, UX Evaluation, Funnel Analysis, PRD, Mohammad Seema, AI Product Management">
+    <meta name="author" content="Mohammad Seema">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons for UI elements -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            purple: '#8B5CF6',
+                            blue: '#3B82F6',
+                            teal: '#14B8A6'
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+        
+        /* Glassmorphism utility classes */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+            border-color: rgba(139, 92, 246, 0.4); /* Purple glow on hover */
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+<body class="antialiased relative selection:bg-brand-purple selection:text-white">
+
+    <!-- Ambient Background Blobs for Glass Effect -->
+    <div class="fixed inset-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+        <div class="absolute top-0 -left-4 w-72 h-72 bg-brand-purple rounded-full mix-blend-multiply filter blur-[128px] opacity-40 animate-blob"></div>
+        <div class="absolute top-0 -right-4 w-72 h-72 bg-brand-blue rounded-full mix-blend-multiply filter blur-[128px] opacity-40 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-brand-teal rounded-full mix-blend-multiply filter blur-[128px] opacity-40 animate-blob animation-delay-4000"></div>
+        <!-- Grid overlay -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CjxyZWN0IHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0ibm9uZSI+PC9yZWN0Pgo8cGF0aCBkPSJNMCA0MEwwIDAgNDAgMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-50"></div>
+    </div>
+
+    <header class="fixed top-0 w-full z-50 p-4 transition-all duration-300">
+        <nav class="max-w-6xl mx-auto glass rounded-2xl px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-brand-purple to-brand-blue">MS.</a>
+            
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                <li><a href="#skills" class="hover:text-white transition-colors">Skills</a></li>
+                <li><a href="#projects" class="hover:text-white transition-colors">Projects</a></li>
+                <li><a href="#education" class="hover:text-white transition-colors">Education</a></li>
+            </ul>
+
+            <a href="#contact" class="hidden md:inline-flex items-center justify-center px-5 py-2 text-sm font-medium rounded-xl text-white bg-white/10 hover:bg-white/20 border border-white/10 transition-all">
+                Contact Me
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-slate-300 hover:text-white">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="relative min-h-screen flex items-center justify-center pt-24 pb-12 px-6">
+            <div class="max-w-4xl mx-auto text-center z-10">
+                <div class="inline-flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-6">
+                    <span class="relative flex h-3 w-3">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-teal opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-teal"></span>
+                    </span>
+                    <span class="text-xs font-medium text-slate-300 uppercase tracking-wider">Available for PM Roles</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                    Hi, I'm <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-purple via-brand-blue to-brand-teal">Mohammad Seema</span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-slate-400 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                    Aspiring Product Manager blending an analytical mindset with empathy. I translate user problems into product opportunities using data, AI, and design thinking.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#projects" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-purple hover:bg-purple-600 text-white font-medium transition-all shadow-[0_0_20px_rgba(139,92,246,0.3)]">
+                        View Product Work
+                    </a>
+                    <a href="https://linkedin.com/in/mohammad-seema-870a5b417" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl glass hover:bg-white/10 text-white font-medium flex items-center justify-center gap-2 transition-all">
+                        <i class="ph-fill ph-linkedin-logo text-xl"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-brand-blue rounded-full mix-blend-overlay filter blur-[80px] opacity-20"></div>
+                    
+                    <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
+                        <i class="ph-fill ph-user-circle text-brand-purple"></i> About Me
+                    </h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div class="space-y-4 text-slate-300 leading-relaxed text-lg font-light">
+                            <p>
+                                I am an Aspiring Product Manager with hands-on experience in product discovery, user research, problem definition, funnel analysis, UX evaluation, and PRD creation through multiple structured product projects.
+                            </p>
+                            <p>
+                                Transitioning from a teaching background, I bring strong communication, problem-solving, and stakeholder management skills. I excel at understanding user pain points, using data and insights to define product opportunities, and building practical, user-centric solutions.
+                            </p>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                                <h3 class="text-xl font-semibold mb-2 flex items-center gap-2 text-white">
+                                    <i class="ph-fill ph-rocket-launch text-brand-teal"></i> Current Focus
+                                </h3>
+                                <p class="text-slate-400">
+                                    Pursuing a comprehensive Product Management Program through Airtribe. Building hands-on experience by tackling case studies across consumer, learning, health, commerce, and productivity domains.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-20 px-6 relative">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Core Competencies</h2>
+                    <p class="text-slate-400">Tools, frameworks, and skills I use to build great products.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Product Management -->
+                    <div class="glass-card rounded-2xl p-6">
+                        <div class="w-12 h-12 rounded-xl bg-brand-purple/20 flex items-center justify-center mb-4 text-brand-purple text-2xl">
+                            <i class="ph-fill ph-strategy"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-3">Product Management</h3>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li>• Product Discovery & Definition</li>
+                            <li>• User Research & User Stories</li>
+                            <li>• PRD Creation & Acceptance Criteria</li>
+                            <li>• Product Strategy & Prioritization</li>
+                        </ul>
+                    </div>
+
+                    <!-- Product Analytics -->
+                    <div class="glass-card rounded-2xl p-6">
+                        <div class="w-12 h-12 rounded-xl bg-brand-blue/20 flex items-center justify-center mb-4 text-brand-blue text-2xl">
+                            <i class="ph-fill ph-chart-line-up"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-3">Product Analytics</h3>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li>• Product Metrics & Funnel Analysis</li>
+                            <li>• Customer Journey Analysis</li>
+                            <li>• AARRR Framework</li>
+                            <li>• User Segmentation & Excel</li>
+                        </ul>
+                    </div>
+
+                    <!-- UX/Design -->
+                    <div class="glass-card rounded-2xl p-6">
+                        <div class="w-12 h-12 rounded-xl bg-pink-500/20 flex items-center justify-center mb-4 text-pink-400 text-2xl">
+                            <i class="ph-fill ph-paint-brush"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-3">UX / Design</h3>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li>• UX Evaluation</li>
+                            <li>• User Experience Analysis</li>
+                            <li>• Figma Prototyping</li>
+                            <li>• Canva Design</li>
+                        </ul>
+                    </div>
+
+                    <!-- AI & Tools -->
+                    <div class="glass-card rounded-2xl p-6">
+                        <div class="w-12 h-12 rounded-xl bg-brand-teal/20 flex items-center justify-center mb-4 text-brand-teal text-2xl">
+                            <i class="ph-fill ph-robot"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-3">AI & Professional</h3>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li>• AI-assisted Product Dev</li>
+                            <li>• AI Prompt Engineering</li>
+                            <li>• Bolt.new & Generative AI Tools</li>
+                            <li>• Stakeholder Management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4">Product Case Studies</h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto">Comprehensive breakdowns of user problems, strategic solutions, and detailed PRDs from concept to functional prototype.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Project 1 -->
+                    <div class="glass-card rounded-2xl flex flex-col h-full overflow-hidden group">
+                        <div class="p-6 flex-grow">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-purple transition-colors">Porter</h3>
+                                <span class="bg-brand-purple/20 text-brand-purple text-xs font-semibold px-2 py-1 rounded">Capstone</span>
+                            </div>
+                            <p class="text-sm text-brand-blue mb-3 font-medium">Product Management Project</p>
+                            <p class="text-slate-400 text-sm mb-4">
+                                Analyzed user journey and identified key pain points in Porter booking. Developed product solutions, defined user flows/requirements, prioritized opportunities, and created a functional prototype.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">Discovery</span>
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">PRD</span>
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">Prototyping</span>
+                            </div>
+                        </div>
+                        <div class="p-4 border-t border-white/10 mt-auto">
+                            <a href="#" class="text-sm font-medium text-white flex items-center justify-center gap-2 hover:text-brand-teal transition-colors w-full bg-white/5 py-2 rounded-lg">
+                                <i class="ph ph-arrow-square-out"></i> Live Demo Placeholder
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="glass-card rounded-2xl flex flex-col h-full overflow-hidden group">
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-purple transition-colors">WorkRadar</h3>
+                            <p class="text-sm text-brand-teal mb-3 font-medium">AI-powered Team Intelligence</p>
+                            <p class="text-slate-400 text-sm mb-4">
+                                Designed an AI product helping managers identify priorities and risks without checking multiple tools. Defined PRD, AI workflows, and built a web prototype using Bolt.new.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">AI Product</span>
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">Workflow Design</span>
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">Bolt.new</span>
+                            </div>
+                        </div>
+                        <div class="p-4 border-t border-white/10 mt-auto">
+                            <a href="#" class="text-sm font-medium text-white flex items-center justify-center gap-2 hover:text-brand-teal transition-colors w-full bg-white/5 py-2 rounded-lg">
+                                <i class="ph ph-arrow-square-out"></i> Live Demo Placeholder
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="glass-card rounded-2xl flex flex-col h-full overflow-hidden group">
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-purple transition-colors">Learning System</h3>
+                            <p class="text-sm text-pink-400 mb-3 font-medium">Personalized Recommendations</p>
+                            <p class="text-slate-400 text-sm mb-4">
+                                Designed a personalized learning product. Defined personas, recommendation logic, user stories, acceptance criteria, system requirements, and success metrics.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">Personas</span>
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">Strategy</span>
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">Success Metrics</span>
+                            </div>
+                        </div>
+                        <div class="p-4 border-t border-white/10 mt-auto">
+                            <a href="#" class="text-sm font-medium text-white flex items-center justify-center gap-2 hover:text-brand-teal transition-colors w-full bg-white/5 py-2 rounded-lg">
+                                <i class="ph ph-arrow-square-out"></i> Live Demo Placeholder
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="glass-card rounded-2xl flex flex-col h-full overflow-hidden group">
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-purple transition-colors">Zomato</h3>
+                            <p class="text-sm text-red-400 mb-3 font-medium">Retention & Funnel Analysis</p>
+                            <p class="text-slate-400 text-sm mb-4">
+                                Analyzed discovery-to-delivery journey. Mapped the product funnel, identified friction points, and proposed product improvements and metrics to improve retention.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">Funnel Analysis</span>
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">Product Metrics</span>
+                            </div>
+                        </div>
+                        <div class="p-4 border-t border-white/10 mt-auto">
+                            <a href="#" class="text-sm font-medium text-white flex items-center justify-center gap-2 hover:text-brand-teal transition-colors w-full bg-white/5 py-2 rounded-lg">
+                                <i class="ph ph-arrow-square-out"></i> Live Demo Placeholder
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="glass-card rounded-2xl flex flex-col h-full overflow-hidden group">
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-purple transition-colors">Uber</h3>
+                            <p class="text-sm text-gray-300 mb-3 font-medium">Pickup Experience Ideation</p>
+                            <p class="text-slate-400 text-sm mb-4">
+                                Analyzed challenges in pickup to identify user uncertainty. Conducted problem analysis, identified improvements, and defined metrics to evaluate solutions.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">User Research</span>
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">UX</span>
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">Solution Ideation</span>
+                            </div>
+                        </div>
+                        <div class="p-4 border-t border-white/10 mt-auto">
+                            <a href="#" class="text-sm font-medium text-white flex items-center justify-center gap-2 hover:text-brand-teal transition-colors w-full bg-white/5 py-2 rounded-lg">
+                                <i class="ph ph-arrow-square-out"></i> Live Demo Placeholder
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="glass-card rounded-2xl flex flex-col h-full overflow-hidden group">
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-purple transition-colors">Zepto</h3>
+                            <p class="text-sm text-purple-400 mb-3 font-medium">AOV & User Segmentation</p>
+                            <p class="text-slate-400 text-sm mb-4">
+                                Evaluated opportunities to improve AOV. Identified relevant user groups, behavioral drivers, and product opportunities using prioritization frameworks.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">Segmentation</span>
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">Prioritization</span>
+                            </div>
+                        </div>
+                        <div class="p-4 border-t border-white/10 mt-auto">
+                            <a href="#" class="text-sm font-medium text-white flex items-center justify-center gap-2 hover:text-brand-teal transition-colors w-full bg-white/5 py-2 rounded-lg">
+                                <i class="ph ph-arrow-square-out"></i> Live Demo Placeholder
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 7 -->
+                    <div class="glass-card rounded-2xl flex flex-col h-full overflow-hidden group">
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-purple transition-colors">VitaFit</h3>
+                            <p class="text-sm text-green-400 mb-3 font-medium">Engagement & Retention</p>
+                            <p class="text-slate-400 text-sm mb-4">
+                                Defined an approach for improving engagement by identifying user needs, core flows, and measurable success criteria structured into PRDs.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">Strategy</span>
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">User Flows</span>
+                            </div>
+                        </div>
+                        <div class="p-4 border-t border-white/10 mt-auto">
+                            <a href="#" class="text-sm font-medium text-white flex items-center justify-center gap-2 hover:text-brand-teal transition-colors w-full bg-white/5 py-2 rounded-lg">
+                                <i class="ph ph-arrow-square-out"></i> Live Demo Placeholder
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 8 -->
+                    <div class="glass-card rounded-2xl flex flex-col h-full overflow-hidden group">
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-purple transition-colors">UX Redesign</h3>
+                            <p class="text-sm text-orange-400 mb-3 font-medium">Evaluation & Problem Identification</p>
+                            <p class="text-slate-400 text-sm mb-4">
+                                Evaluated a digital product experience using UX laws to identify usability issues. Prioritized improvements to reduce user friction.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">UX Research</span>
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">Usability</span>
+                            </div>
+                        </div>
+                        <div class="p-4 border-t border-white/10 mt-auto">
+                            <a href="#" class="text-sm font-medium text-white flex items-center justify-center gap-2 hover:text-brand-teal transition-colors w-full bg-white/5 py-2 rounded-lg">
+                                <i class="ph ph-arrow-square-out"></i> Live Demo Placeholder
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 9 -->
+                    <div class="glass-card rounded-2xl flex flex-col h-full overflow-hidden group">
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-purple transition-colors">AI Prompt-to-PRD</h3>
+                            <p class="text-sm text-indigo-400 mb-3 font-medium">Workflow Design</p>
+                            <p class="text-slate-400 text-sm mb-4">
+                                Created a reusable AI system prompt converting structured inputs into standard PRDs. Defined the prompt framework, PRD structure, and quality rules.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">Prompt Engineering</span>
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">Requirements</span>
+                            </div>
+                        </div>
+                        <div class="p-4 border-t border-white/10 mt-auto">
+                            <a href="#" class="text-sm font-medium text-white flex items-center justify-center gap-2 hover:text-brand-teal transition-colors w-full bg-white/5 py-2 rounded-lg">
+                                <i class="ph ph-arrow-square-out"></i> Live Demo Placeholder
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 10 -->
+                    <div class="glass-card rounded-2xl flex flex-col h-full overflow-hidden group">
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-purple transition-colors">Competitor News</h3>
+                            <p class="text-sm text-yellow-400 mb-3 font-medium">Automation & AI</p>
+                            <p class="text-slate-400 text-sm mb-4">
+                                Designed an automated workflow tracking company updates, generating AI summaries, and delivering daily digests using Google Sheets, Apps Script & Gemini.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">Product Ops</span>
+                                <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300">Automation</span>
+                            </div>
+                        </div>
+                        <div class="p-4 border-t border-white/10 mt-auto">
+                            <a href="#" class="text-sm font-medium text-white flex items-center justify-center gap-2 hover:text-brand-teal transition-colors w-full bg-white/5 py-2 rounded-lg">
+                                <i class="ph ph-arrow-square-out"></i> Live Demo Placeholder
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="py-20 px-6 bg-white/[0.02] border-y border-white/10">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Education & Certifications</h2>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="glass p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-brand-purple">Product Management Program</h3>
+                            <p class="text-slate-300">Airtribe (Certification in Progress)</p>
+                        </div>
+                        <span class="bg-white/10 px-3 py-1 rounded-full text-xs text-white border border-white/20">Present</span>
+                    </div>
+
+                    <div class="glass p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-brand-blue">Bachelor of Education</h3>
+                            <p class="text-slate-300">Mohamadiya College</p>
+                        </div>
+                        <span class="text-sm text-slate-500">2023 - 2025</span>
+                    </div>
+
+                    <div class="glass p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-brand-teal">Master of Science</h3>
+                            <p class="text-slate-300">Priyadarshini Institution of Khammam</p>
+                        </div>
+                        <span class="text-sm text-slate-500">2021 - 2023</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 px-6 relative">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-6">Let's Connect</h2>
+                <p class="text-slate-400 mb-10 text-lg">
+                    I'm actively looking for Product Management roles and would love to chat about how my analytical background and user-centric approach can add value to your team.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                    <a href="mailto:simransiddiq5257@gmail.com" class="flex items-center gap-3 px-6 py-4 glass-card rounded-xl text-white hover:text-brand-purple w-full sm:w-auto transition-colors">
+                        <i class="ph ph-envelope-simple text-2xl"></i>
+                        <span>simransiddiq5257@gmail.com</span>
+                    </a>
+                    
+                    <a href="tel:934-609-4048" class="flex items-center gap-3 px-6 py-4 glass-card rounded-xl text-white hover:text-brand-blue w-full sm:w-auto transition-colors">
+                        <i class="ph ph-phone text-2xl"></i>
+                        <span>934-609-4048</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/10 py-8 text-center text-slate-500 text-sm glass">
+        <p>&copy; 2026 Mohammad Seema. Built with passion for Product Management.</p>
+        <p class="mt-2">Hyderabad, India</p>
+    </footer>
+
+    <script>
+        // Simple script to add background styling on scroll to the nav
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+        });
+    </script>
+</body>
+</html>
